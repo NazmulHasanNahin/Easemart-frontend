@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>Shop Cart</title>
+</head>
+
+
+<body>
+    <div id="navbar-container"></div>
+    <div id="alert-container"></div>
+    <section>
+
+        <!--start breadcrumb-->
+        <section class="py-3 border-b border-t bg-gray-100 hidden md:flex">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">Shop Cart</h3>
+                    <nav class="text-sm">
+                        <ol class="breadcrumb flex items-center space-x-2">
+                            <li><a href="javascript:;" class="text-blue-500 hover:text-blue-700"><i
+                                        class="bx bx-home-alt"></i> Home</a></li>
+                            <li><a href="javascript:;" class="text-gray-600 hover:text-gray-800">Shop</a></li>
+                            <li class="text-gray-500">Shop Cart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!--end breadcrumb-->
+
+
+
+        <!--start shop cart-->
+        <section class="py-8 bg-gray-100">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    <!-- Cart Items Section -->
+                    <div class="xl:col-span-2">
+                        <div class="bg-white p-6 rounded-lg shadow-lg cart-items">
+                            <!-- Product 1 -->
+                            <!-- <div class="flex flex-col lg:flex-row items-center lg:items-start gap-6 border-b pb-6 mb-6">
+                                <div class="cart-img w-full lg:w-1/4">
+                                    <img src="./images/products/01.png" class="w-full object-cover rounded-lg"
+                                        alt="Product 1">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-lg font-semibold mb-2">White Regular Polo T-Shirt</h4>
+                                    <p class="text-gray-600">Size: <span class="text-black">Regular</span></p>
+                                    <p class="text-gray-600">Color: <span class="text-black">White & Blue</span></p>
+                                    <h5 class="text-xl font-bold mt-4">$19.00</h5>
+                                </div>
+                                <div class="lg:ml-auto">
+                                    <a href="javascript:;" class="text-red-600 hover:text-red-800 font-bold">
+                                        <i class='bx bx-x'></i> Remove
+                                    </a>
+                                </div>
+                            </div> -->
+
+
+                            <!-- Repeat the same structure for additional products if needed -->
+
+                            
+                        </div>
+                    </div>
+
+                    <!-- Order Summary Section -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg xl:sticky xl:top-24 order-summary">
+                        <h5 class="text-xl font-bold mb-6">Order Summary</h5>
+                        <div class="flex justify-between mb-4">
+                            <p class="text-gray-600">Subtotal:</p>
+                            <p class="text-black font-bold">$00.00</p>
+                        </div>
+                        <div class="flex justify-between mb-4">
+                            <p class="text-gray-600">Shipping:</p>
+                            <p class="text-black font-bold">--</p>
+                        </div>
+                        <div class="flex justify-between mb-4">
+                            <p class="text-gray-600">Taxes:</p>
+                            <p class="text-black font-bold">$00.00</p>
+                        </div>
+                        <div class="flex justify-between mb-4">
+                            <p class="text-gray-600">Discount:</p>
+                            <p class="text-black font-bold">--</p>
+                        </div>
+                        <hr class="my-4">
+                        <div class="flex justify-between text-lg font-bold mb-6">
+                            <p>Total:</p>
+                            <p>$00.00</p>
+                        </div>
+                        <a href="checkout-payment.html"
+                            class="bg-gray-800 text-white py-3 w-full text-center rounded-lg hover:bg-gray-900 transition block">
+                            Proceed to Checkout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end shop cart-->
+
+
+
+
+
+    </section>
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/shop-cart.js"></script>
+</body>
+
+</html>

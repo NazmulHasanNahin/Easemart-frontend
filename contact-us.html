@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>Contact Us</title>
+</head>
+
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+        <!--start breadcrumb-->
+        <section class="py-3 border-b border-t bg-gray-100 hidden md:flex">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">Contact Us</h3>
+                    <nav class="text-sm">
+                        <ol class="breadcrumb flex items-center space-x-2">
+                            <li><a href="javascript:;" class="text-blue-500 hover:text-blue-700"><i
+                                        class="bx bx-home-alt"></i> Home</a></li>
+                            <li><a href="javascript:;" class="text-gray-600 hover:text-gray-800">Shop</a></li>
+                            <li class="text-gray-500">Contact Us</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!--end breadcrumb-->
+
+
+        <!-- Start page content -->
+        <section class="py-8">
+            <div class="container mx-auto">
+                <h3 class="hidden">Google Map</h3>
+                <div class="contact-map p-3 bg-gray-100 rounded-lg shadow-md">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805184.6319269302!2d144.49269200596396!3d-37.971237009163936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1618835176130!5m2!1sen!2sin"
+                        class="w-full h-96 border-0 rounded-lg" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Contact Form Section -->
+                    <div class="lg:col-span-2">
+                        <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                            <form>
+                                <h6 class="text-lg font-bold uppercase">Drop us a line</h6>
+                                <div class="my-4 border-b"></div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium">Enter Your Name</label>
+                                    <input type="text"
+                                        class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-gray-400" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium">Enter Email</label>
+                                    <input type="email"
+                                        class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-gray-400" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium">Phone Number</label>
+                                    <input type="text"
+                                        class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-gray-400" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium">Message</label>
+                                    <textarea class="w-full mt-2 p-3 border rounded-md focus:ring-2 focus:ring-gray-400"
+                                        rows="4"></textarea>
+                                </div>
+                                <button
+                                    class="w-full lg:w-auto bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Contact Info Section -->
+                    <div>
+                        <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                            <div class="mb-6">
+                                <h6 class="text-lg font-bold uppercase">Address</h6>
+                                <p class="text-sm">123 Street Name, City, Australia</p>
+                            </div>
+                            <div class="mb-6">
+                                <h6 class="text-lg font-bold uppercase">Phone</h6>
+                                <p class="text-sm">Toll Free: (123) 472-796</p>
+                                <p class="text-sm">Mobile: +91-9910XXXX</p>
+                            </div>
+                            <div class="mb-6">
+                                <h6 class="text-lg font-bold uppercase">Email</h6>
+                                <p class="text-sm">mail@example.com</p>
+                            </div>
+                            <div>
+                                <h6 class="text-lg font-bold uppercase">Working Days</h6>
+                                <p class="text-sm">Mon - Fri / 9:30 AM - 6:30 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End page content -->
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script src="./js/navbar.js"></script>
+</body>
+
+</html>

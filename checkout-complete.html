@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>Order Complete</title>
+</head>
+
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+
+        <!--start breadcrumb-->
+        <section class="py-3 border-b border-t bg-gray-100 hidden md:flex">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">Shop Cart</h3>
+                    <nav class="text-sm">
+                        <ol class="breadcrumb flex items-center space-x-2">
+                            <li><a href="index.html" class="text-blue-500 hover:text-blue-700"><i
+                                        class="bx bx-home-alt"></i> Home</a></li>
+                            <li><a href="javascript:;" class="text-gray-600 hover:text-gray-800">Shop</a></li>
+                            <li class="text-gray-500">Order Complete</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!--end breadcrumb-->
+
+
+        <!--start shop cart-->
+        <section class="py-4">
+            <div class="container mx-auto">
+                <div class="bg-white shadow-md rounded-md py-6 mt-6">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold pb-3">Thank you for your order!</h2>
+                        <p class="text-sm mb-2">Your order has been placed and will be processed as soon as possible.
+                        </p>
+                        <p class="text-sm mb-2">
+                            Make sure you make note of your order number, which is
+                            <span class="font-medium" id="order-number"></span>.
+                        </p>
+                        <p class="text-sm">You will be receiving an email shortly with confirmation of your order.
+                        </p>
+                        <div class="mt-4">
+                            <a href="index.html"
+                                class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md mr-3 hover:bg-gray-300">Go back
+                                shopping</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end shop cart-->
+
+
+
+        <script>
+            function generateOrderNumber(length) {
+                let result = '';
+                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                const charactersLength = characters.length;
+                for (let i = 0; i < length; i++) {
+                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                }
+                return result;
+            }
+            document.getElementById('order-number').innerText = generateOrderNumber(10);
+        </script>
+
+
+    </section>
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script src="./js/navbar.js"></script>
+</body>
+
+</html>

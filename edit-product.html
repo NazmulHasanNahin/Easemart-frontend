@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-8">
+
+        <h1 class="text-2xl font-bold mb-4">Edit Product</h1>
+        <form id="editProductForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <!-- Go Back Button -->
+            <div class="container mx-auto my-2 mb-5">
+                <a href="javascript:history.back()"
+                    class="bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-900 transition inline-flex items-center">
+                    <i class='bx bx-arrow-back'></i> Go Back
+                </a>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Product Name</label>
+                <input type="text" id="name" name="name"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="description">Description</label>
+                <textarea id="description" name="description" rows="4"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="original_price">Original Price</label>
+                <input type="text" id="original_price" name="original_price"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="discounted_price">Discounted
+                    Price</label>
+                <input type="text" id="discounted_price" name="discounted_price"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="category">Category</label>
+                <input type="text" id="category" name="category" disabled
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 cursor-not-allowed">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="seller">Seller</label>
+                <input type="text" id="seller" name="seller" disabled
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 cursor-not-allowed">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Image</label>
+                <img id="imagePreview" src="" alt="Product Image" class="w-32 h-32 object-cover mb-2">
+                <input type="text" id="image" name="image" disabled
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 cursor-not-allowed">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="product_id">Product ID</label>
+                <input type="text" id="product_id" name="product_id" disabled
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 cursor-not-allowed">
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button id="saveProductBtn"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="alert-container" class="fixed top-5 right-5 z-50"></div>
+
+    <script src="./js/edit-products.js"></script>
+</body>
+
+</html>

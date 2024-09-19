@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>Blog Post</title>
+</head>
+
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+
+        <!--start page wrapper-->
+        <div class="page-wrapper">
+            <div class="page-content">
+                <!--start breadcrumb-->
+                <section class="py-3 bg-gray-100 border-t border-b hidden md:flex">
+                    <div class="container mx-auto px-4">
+                        <div class="flex items-center justify-between">
+                            <div class="breadcrumb-title text-gray-800">Blog</div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb flex space-x-2 text-gray-600">
+                                    <li><a href="javascript:;" class="hover:text-gray-900">Home</a></li>
+                                    <li><a href="javascript:;" class="hover:text-gray-900">Blog</a></li>
+                                    <li class="text-gray-500">Blog Posts</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                <!--end breadcrumb-->
+
+                <!-- Start of blog-post.html -->
+                <div class="page-wrapper bg-gray-100">
+                    <div class="container mx-auto px-4 py-8">
+                        <!-- Blog Posts Section -->
+                        <div class="container mx-auto px-4">
+                            <!-- Blog Post 1 -->
+                            <div class="card mb-8 rounded-lg shadow-lg border overflow-hidden">
+                                <img src="./images/blog-img/01.jpg" alt="Blog Image 1" class="w-full h-96 object-cover">
+                                <div class="p-6">
+                                    <div class="flex items-center space-x-4 text-gray-600 text-sm">
+                                        <span>By John Doe</span>
+                                        <span>|</span>
+                                        <span>March 10, 2024</span>
+                                        <span>|</span>
+                                        <span>5 Comments</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold mt-4">The Future of Web Development: Trends to Watch
+                                        in 2024</h3>
+                                    <p class="text-gray-700 mt-4">
+                                        Web development is evolving at an unprecedented pace, with new frameworks,
+                                        tools, and technologies
+                                        emerging constantly. In 2024, we can expect a stronger focus on web performance,
+                                        accessibility, and more
+                                        robust frameworks...
+                                    </p>
+                                    <a href="./blog-details-1.html"
+                                        class="inline-block mt-6 text-white bg-gray-800 py-2 px-4 rounded-md hover:bg-black transition duration-300">Read
+                                        More</a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 2 -->
+                            <div class="card mb-8 rounded-lg shadow-lg border overflow-hidden">
+                                <img src="./images/blog-img/2.jpg" alt="Blog Image 2" class="w-full h-96 object-cover">
+                                <div class="p-6">
+                                    <div class="flex items-center space-x-4 text-gray-600 text-sm">
+                                        <span>By Sarah Lee</span>
+                                        <span>|</span>
+                                        <span>February 25, 2024</span>
+                                        <span>|</span>
+                                        <span>10 Comments</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold mt-4">How to Build a Successful eCommerce Website in
+                                        2024</h3>
+                                    <p class="text-gray-700 mt-4">
+                                        Building an eCommerce site has never been easier, but standing out in the
+                                        crowded digital marketplace requires careful planning. From choosing the right
+                                        platform to optimizing the user experience, this blog dives into the essential
+                                        steps to ensure your eCommerce site thrives in 2024...
+                                    </p>
+                                    <a href="./blog-details-2.html"
+                                        class="inline-block mt-6 text-white bg-gray-800 py-2 px-4 rounded-md hover:bg-black transition duration-300">Read
+                                        More</a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 3 -->
+                            <div class="card mb-8 rounded-lg shadow-lg border overflow-hidden">
+                                <img src="./images/blog-img/3.jpg" alt="Blog Image 3" class="w-full h-96 object-cover">
+                                <div class="p-6">
+                                    <div class="flex items-center space-x-4 text-gray-600 text-sm">
+                                        <span>By Alex Morgan</span>
+                                        <span>|</span>
+                                        <span>January 15, 2024</span>
+                                        <span>|</span>
+                                        <span>8 Comments</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold mt-4">Top 10 UX/UI Design Tips for 2024</h3>
+                                    <p class="text-gray-700 mt-4">
+                                        In today's competitive digital landscape, user experience (UX) and user
+                                        interface (UI) design play critical roles in the success of websites and apps.
+                                        In this post, we’ll highlight the top 10 UX/UI design tips that will help you
+                                        create visually stunning and highly functional digital experiences...
+                                    </p>
+                                    <a href="./blog-details-3.html"
+                                        class="inline-block mt-6 text-white bg-gray-800 py-2 px-4 rounded-md hover:bg-black transition duration-300">Read
+                                        More</a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 4 -->
+                            <div class="card mb-8 rounded-lg shadow-lg border overflow-hidden">
+                                <img src="./images/blog-img/4.jpg" alt="Blog Image 4" class="w-full h-96 object-cover">
+                                <div class="p-6">
+                                    <div class="flex items-center space-x-4 text-gray-600 text-sm">
+                                        <span>By Emily Turner</span>
+                                        <span>|</span>
+                                        <span>April 5, 2024</span>
+                                        <span>|</span>
+                                        <span>3 Comments</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold mt-4">AI in Web Design: How Artificial Intelligence is
+                                        Revolutionizing UX</h3>
+                                    <p class="text-gray-700 mt-4">
+                                        Artificial Intelligence is making waves in web design, offering tools that
+                                        automate and enhance user experiences. From AI-powered design tools to
+                                        personalized content generation, this blog explores how AI is transforming the
+                                        web design industry...
+                                    </p>
+                                    <a href="./blog-details-4.html"
+                                        class="inline-block mt-6 text-white bg-gray-800 py-2 px-4 rounded-md hover:bg-black transition duration-300">Read
+                                        More</a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 5 -->
+                            <div class="card mb-8 rounded-lg shadow-lg border overflow-hidden">
+                                <img src="./images/blog-img/5.jpg" alt="Blog Image 5" class="w-full h-96 object-cover">
+                                <div class="p-6">
+                                    <div class="flex items-center space-x-4 text-gray-600 text-sm">
+                                        <span>By Michael Smith</span>
+                                        <span>|</span>
+                                        <span>March 20, 2024</span>
+                                        <span>|</span>
+                                        <span>7 Comments</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold mt-4">Creating Seamless Mobile-First Websites: Best
+                                        Practices for 2024</h3>
+                                    <p class="text-gray-700 mt-4">
+                                        With mobile usage surpassing desktop, ensuring your website is mobile-first has
+                                        never been more critical. In this blog post, we cover best practices for
+                                        building mobile-first websites, from responsive design to optimizing site
+                                        speed...
+                                    </p>
+                                    <a href="./blog-details-5.html"
+                                        class="inline-block mt-6 text-white bg-gray-800 py-2 px-4 rounded-md hover:bg-black transition duration-300">Read
+                                        More</a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 6 -->
+                            <div class="card mb-8 rounded-lg shadow-lg border overflow-hidden">
+                                <img src="./images/blog-img/6.jpg" alt="Blog Image 6" class="w-full h-96 object-cover">
+                                <div class="p-6">
+                                    <div class="flex items-center space-x-4 text-gray-600 text-sm">
+                                        <span>By Rachel Green</span>
+                                        <span>|</span>
+                                        <span>February 10, 2024</span>
+                                        <span>|</span>
+                                        <span>12 Comments</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold mt-4">How to Improve Website Accessibility in 2024
+                                    </h3>
+                                    <p class="text-gray-700 mt-4">
+                                        Accessibility is no longer just an option—it's a requirement. Ensuring your
+                                        website is accessible to all users is crucial for both legal compliance and user
+                                        satisfaction. Learn about the latest tools, guidelines, and techniques for
+                                        improving website accessibility in 2024...
+                                    </p>
+                                    <a href="./blog-details-6.html"
+                                        class="inline-block mt-6 text-white bg-gray-800 py-2 px-4 rounded-md hover:bg-black transition duration-300">Read
+                                        More</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Tags Section -->
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Popular Tags</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="javascript:;"
+                                    class="px-4 py-2 border border-gray-600 text-gray-600 rounded hover:bg-black hover:text-white transition duration-300">Cloths</a>
+                                <a href="javascript:;"
+                                    class="px-4 py-2 border border-gray-600 text-gray-600 rounded hover:bg-black hover:text-white transition duration-300">Electronics</a>
+                                <a href="javascript:;"
+                                    class="px-4 py-2 border border-gray-600 text-gray-600 rounded hover:bg-black hover:text-white transition duration-300">Furniture</a>
+                                <a href="javascript:;"
+                                    class="px-4 py-2 border border-gray-600 text-gray-600 rounded hover:bg-black hover:text-white transition duration-300">Laptops</a>
+                                <a href="javascript:;"
+                                    class="px-4 py-2 border border-gray-600 text-gray-600 rounded hover:bg-black hover:text-white transition duration-300">Shoes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of blog-post.html -->
+
+            </div>
+        </div>
+        <!--end page wrapper-->
+
+
+
+
+    </section>
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script src="./js/navbar.js"></script>
+</body>
+
+</html>

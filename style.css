@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    font-family: 'Albert Sans', sans-serif;
+}
+/* Hide Swiper navigation icons on mobile */
+@media (max-width: 767px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+/* Add this CSS to your stylesheet */
+.tab-btn.active {
+  background-color: #D3D3D3;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>All Products</title>
+</head>
+
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+        <!--start breadcrumb-->
+        <section class="py-3 border-b border-t bg-gray-100 hidden md:flex">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">All Products</h3>
+                    <nav class="text-sm">
+                        <ol class="breadcrumb flex items-center space-x-2">
+                            <li><a href="javascript:;" class="text-blue-500 hover:text-blue-700"><i
+                                        class="bx bx-home-alt"></i> Home</a></li>
+                            <li><a href="javascript:;" class="text-gray-600 hover:text-gray-800">Shop</a></li>
+                            <li class="text-gray-500">All Products</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!--end breadcrumb-->
+
+
+        <!-- Start shop area -->
+        <section class="py-4">
+            <div class="container mx-auto">
+                <div
+                    class="flex flex-wrap items-center mb-3 gap-4 p-3 bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <!-- Product Category Filter -->
+                    <div class="flex flex-wrap gap-4 flex-grow">
+                        <div>
+                            <label for="category-filter" class="sr-only">Product Category</label>
+                            <select id="category-filter"
+                                class="form-select rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                                <option selected>Product Category</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <label for="search-input" class="sr-only">Search</label>
+                            <input id="search-input" type="text" placeholder="Search..."
+                                class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 w-64" />
+                            <button type="button" id="search-button"
+                                class="px-4 py-2 text-white bg-black rounded-lg hover:bg-gray-800 transition duration-300">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Display Options -->
+                    <div class="flex items-center gap-4">
+                        <p class="text-sm font-medium text-gray-700">Show:</p>
+                        <label for="show-options" class="sr-only">Show Options</label>
+                        <select id="show-options"
+                            class="form-select rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                            <option>9</option>
+                            <option>12</option>
+                            <option>16</option>
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                    </div>
+                    <!-- View Switcher -->
+                    <div class="flex items-center gap-2">
+                        <a href="shop-grid-filter-on-top.html"
+                            class="rounded-lg border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 transition duration-300">
+                            <i class='bx bxs-grid'></i>
+                        </a>
+                        <a href="shop-list-filter-on-top.html"
+                            class="rounded-lg bg-black text-white p-2 hover:bg-gray-800 transition duration-300">
+                            <i class='bx bx-list-ul'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End shop area -->
+
+        <!-- Loading indicator -->
+        <div id="loading-indicator"
+            class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden">
+            <div class="text-white text-lg">Loading...</div>
+        </div>
+
+
+        <div class="no-pd">
+            <!-- The message will be inserted here -->
+        </div>
+        
+
+
+        <section class="py-10">
+            <div class="container mx-auto py-8">
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 product-container">
+                    <!-- Product 1 -->
+                    <!-- <div
+                        class="bg-white rounded-lg shadow-lg hover:shadow-2xl  p-3 transform hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
+                        <img src="./images/products/01.png" alt="Product 1"
+                            class="w-full h-40 object-contain mb-4 rounded-lg">
+                        <div class="text-center">
+                            <h5 class="text-gray-800 font-bold text-md">Product 1</h5>
+                            <p class="text-gray-500 text-sm mb-2">Category Name</p>
+                            <div class="flex justify-center items-center gap-1">
+                                <span class="text-gray-400 line-through">$99.00</span>
+                                <span class="text-xl text-black font-semibold">$49.00</span>
+                            </div>
+                            <div class="flex justify-center mt-2 text-yellow-500">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <div class="mt-4 flex justify-around gap-5 lg:gap-0">
+                                <button
+                                    class="bg-black text-white text-sm px-3 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-300">Add
+                                    to Cart</button>
+                                <button
+                                    class="bg-gray-200 text-black text-sm px-3 py-1 rounded-lg hover:bg-gray-300 transition-colors duration-300">Details</button>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Product 2 -->
+                    <!-- <div
+                        class="bg-white rounded-lg shadow-lg hover:shadow-2xl  p-3 transform hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
+                        <img src="./images/products/02.png" alt="Product 2"
+                            class="w-full h-40 object-contain mb-4 rounded-lg">
+                        <div class="text-center">
+                            <h5 class="text-gray-800 font-bold text-md">Product 2</h5>
+                            <p class="text-gray-500 text-sm mb-2">Category Name</p>
+                            <div class="flex justify-center items-center gap-1">
+                                <span class="text-gray-400 line-through">$99.00</span>
+                                <span class="text-xl text-black font-semibold">$49.00</span>
+                            </div>
+                            <div class="flex justify-center mt-2 text-yellow-500">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <div class="mt-4 flex justify-around gap-5 lg:gap-0">
+                                <button
+                                    class="bg-black text-white text-sm px-3 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-300">Add
+                                    to Cart</button>
+                                <button
+                                    class="bg-gray-200 text-black text-sm px-3 py-1 rounded-lg hover:bg-gray-300 transition-colors duration-300">Details</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+
+    </section>
+
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/all-product.js"></script>
+</body>
+
+</html>

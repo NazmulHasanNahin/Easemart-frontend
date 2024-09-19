@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <title>Ease Mart</title>
+    <!-- header  -->
+    <style>
+        .sliding-text {
+            font-size: 1.05rem;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: slide-in 20s linear infinite;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .sliding-text {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <div id="navbar-container"></div>
+
+    <main>
+
+        <div class="sliding-text">
+            🎉 Buy More, Save More! Up to 30% Off on Bulk Purchases!
+            💥 Big Savings! Enjoy 70% Off on Clearance Items!
+            🛍️ Shop Now and Get 25% Off on Your First Order!
+        </div>
+        <!-- invisible -->
+        <!-- <section class="pt-3 pb-3 px-3">
+            <h1 class="hidden">hii</h1>
+        </section> -->
+
+
+
+        <!-- carosol  -->
+        <section class="slider-section mb-4">
+            <div class="first-slider p-0">
+                <div class="swiper banner-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-0 flex flex-col items-start justify-center text-left lg:ml-32 text-gray-800 bg-gray-800 bg-opacity-0 p-4 md:p-8">
+                                    <h3 class="hidden md:block text-4xl font-bold">New Trending</h3>
+                                    <h1 class="text-4xl font-bold">Women Fashion</h1>
+                                    <p class="hidden md:block text-lg font-semibold"><i>Last call for upto 15%</i></p>
+                                    <a class="btn btn-dark btn-ecomm px-4 py-2 mt-4 bg-black text-white rounded"
+                                        href="all-product.html">Shop Now</a>
+                                </div>
+                                <a href="javascript:;">
+                                    <img src="./images/banners/01.png" class="w-full h-auto object-cover"
+                                        alt="Women Fashion">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-0 flex flex-col items-start justify-center text-left lg:ml-32 text-gray-800 bg-gray-800 bg-opacity-0 p-4 md:p-8">
+                                    <h3 class="hidden md:block text-2xl font-bold">New Trending</h3>
+                                    <h1 class="text-3xl font-bold">Men Fashion</h1>
+                                    <p class="hidden md:block text-lg font-semibold"><i>Last call for upto 15%</i></p>
+                                    <a class="btn btn-dark btn-ecomm px-4 py-2 mt-4 bg-black text-white rounded"
+                                        href="all-product.html">Shop Now</a>
+                                </div>
+                                <a href="javascript:;">
+                                    <img src="./images/banners/02.png" class="w-full h-auto object-cover"
+                                        alt="Men Fashion">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="relative">
+                                <div
+                                    class="absolute inset-0 flex flex-col items-start justify-center text-left lg:ml-32 text-gray-800 bg-gray-800 bg-opacity-0 p-4 md:p-8">
+                                    <h3 class="hidden md:block text-2xl font-bold">New Trending</h3>
+                                    <h1 class="text-3xl font-bold">Kids Fashion</h1>
+                                    <p class="hidden md:block text-lg font-semibold"><i>Last call for upto 15%</i></p>
+                                    <a class="btn btn-dark btn-ecomm px-4 py-2 mt-4 bg-black text-white rounded"
+                                        href="all-product.html">Shop Now</a>
+                                </div>
+                                <a href="javascript:;">
+                                    <img src="./images/banners/04.png" class="w-full h-auto object-cover"
+                                        alt="Kids Fashion">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Start information -->
+        <section class="py-4">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div class="flex items-center justify-center p-3 border border-gray-300 rounded">
+                        <div class="text-3xl text-gray-700">
+                            <i class='bx bx-taxi'></i>
+                        </div>
+                        <div class="ml-3">
+                            <h6 class="text-lg font-bold mb-1">FREE SHIPPING &amp; RETURN</h6>
+                            <p class="text-sm text-gray-600">Free shipping on all orders over $49</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center p-3 border border-gray-300 rounded">
+                        <div class="text-3xl text-gray-700">
+                            <i class='bx bx-dollar-circle'></i>
+                        </div>
+                        <div class="ml-3">
+                            <h6 class="text-lg font-bold mb-1">MONEY BACK GUARANTEE</h6>
+                            <p class="text-sm text-gray-600">100% money back guarantee</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center p-3 border border-gray-300 rounded">
+                        <div class="text-3xl text-gray-700">
+                            <i class='bx bx-support'></i>
+                        </div>
+                        <div class="ml-3">
+                            <h6 class="text-lg font-bold mb-1">ONLINE SUPPORT 24/7</h6>
+                            <p class="text-sm text-gray-600">Awesome Support for 24/7 Days</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End information -->
+
+        <!-- Start promotion -->
+        <section class="py-4">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Promotion Item 1 -->
+                    <div class="relative flex flex-col rounded-lg overflow-hidden shadow-md">
+                        <img src="./images/promo/01.png" class="w-full h-80" alt="Men Wear" />
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white p-4">
+                            <h5 class="text-lg font-bold uppercase mb-2">Men Wear</h5>
+                            <p class="text-sm uppercase mb-4">Starting at $9</p>
+                            <a href="all-product.html"
+                                class="transition-all duration-300 ease-in-out hover:bg-white hover:text-black border border-white text-white rounded py-2 px-4">
+                                SHOP NOW
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Promotion Item 2 -->
+                    <div class="relative flex flex-col rounded-lg overflow-hidden shadow-md">
+                        <img src="./images/promo/02.png" class="w-full h-80" alt="Women Wear" />
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white p-4">
+                            <h5 class="text-lg font-bold uppercase mb-2">Women Wear</h5>
+                            <p class="text-sm uppercase mb-4">Starting at $9</p>
+                            <a href="all-product.html"
+                                class="transition-all duration-300 ease-in-out hover:bg-white hover:text-black border border-white text-white rounded py-2 px-4">
+                                SHOP NOW
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Promotion Item 3 -->
+                    <div class="relative flex flex-col rounded-lg overflow-hidden shadow-md">
+                        <img src="./images/promo/03.png" class="w-full h-80" alt="Kids Wear" />
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white p-4">
+                            <h5 class="text-lg font-bold uppercase mb-2">Kids Wear</h5>
+                            <p class="text-sm uppercase mb-4">Starting at $9</p>
+                            <a href="all-product.html"
+                                class="transition-all duration-300 ease-in-out hover:bg-white hover:text-black border border-white text-white rounded py-2 px-4">
+                                SHOP NOW
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End promotion -->
+
+
+
+
+        <!--start Featured product-->
+        <section class="py-4 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center pb-4">
+                    <div class="w-1/6 border-t-2 border-gray-300"></div>
+                    <h5 class="mx-4 text-lg font-bold uppercase">FEATURED PRODUCTS</h5>
+                    <div class="w-1/6 border-t-2 border-gray-300"></div>
+                </div>
+                <div class="product-grid">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+                        <!-- 1 -->
+                        <!-- <a href="" class="block">
+                            <div class="card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
+                                <div class="relative overflow-hidden">
+                                    <div class="absolute top-3 right-3">
+                                    </div>
+                                    <img src="./images/products/11.png" class="w-full h-auto object-cover" alt="Product 1">
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h6 class="text-lg font-bold text-gray-900 mb-2">White Polo Shirt</h6>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center mt-2">
+                                        <i class="bx bxs-star text-yellow-500"></i>
+                                        <i class="bx bxs-star text-yellow-500"></i>
+                                        <i class="bx bxs-star text-yellow-500"></i>
+                                        <i class="bx bxs-star text-yellow-500"></i>
+                                        <i class="bx bxs-star text-yellow-500"></i>
+                                    </div>
+                                    <div class="flex items-center gap-2 mt-2">
+                                        <span class="text-gray-500 line-through">$59.00</span>
+                                        <span class="text-lg font-bold text-gray-900">$48.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a> -->
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end Featured product-->
+
+
+
+
+
+
+
+
+
+        <!--start New Arrivals-->
+        <section class="py-4 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center pb-4">
+                    <div class="w-1/6 border-t-2 border-gray-300"></div>
+                    <h5 class="mx-4 text-lg font-bold uppercase">NEW ARRIVALS</h5>
+                    <div class="w-1/6 border-t-2 border-gray-300"></div>
+                </div>
+                <div class="new-arrivals-grid">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+                        <!-- New Arrivals Products Will be Injected Here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end New Arrivals-->
+
+
+
+        <!--start Advertise banners-->
+        <section class="py-4 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+                    <div class="relative bg-white overflow-hidden rounded-lg shadow-md">
+                        <img src="./images/promo/04.png" class="w-full h-48 object-cover" alt="Sunglasses Sale">
+                        <div class="absolute top-3 right-3 bg-red-600 text-white py-1 px-2 rounded">-10%</div>
+                        <div class="p-4 text-center">
+                            <h5 class="text-lg font-semibold">Sunglasses Sale</h5>
+                            <p class="text-gray-600 mt-2">See all Sunglasses and get 10% off at all Sunglasses</p>
+                            <a href="all-product.html"
+                                class="inline-block mt-2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">SHOP
+                                BY GLASSES</a>
+                        </div>
+                    </div>
+                    <div class="relative bg-white overflow-hidden rounded-lg shadow-md">
+                        <img src="./images/promo/08.png" class="w-full h-48 object-cover" alt="Cosmetics Sales">
+                        <div class="absolute top-3 right-3 bg-red-600 text-white py-1 px-2 rounded">-80%</div>
+                        <div class="p-4 text-center">
+                            <h5 class="text-lg font-semibold">Cosmetics Sales</h5>
+                            <p class="text-gray-600 mt-2">Buy Cosmetics products and get 30% off at all Cosmetics</p>
+                            <a href="all-product.html"
+                                class="inline-block mt-2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">SHOP
+                                BY COSMETICS</a>
+                        </div>
+                    </div>
+                    <div class="relative bg-white overflow-hidden rounded-lg shadow-md">
+                        <img src="./images/promo/06.png" class="w-full h-48 object-cover" alt="Fashion Summer Sale">
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-center text-white p-4">
+                            <div>
+                                <h5 class="text-xl font-semibold">Fashion Summer Sale</h5>
+                                <p class="text-2xl font-bold mt-2">Up to 80% off</p>
+                                <p class="mt-2">On Top Fashion Brands</p>
+                                <a href="all-product.html"
+                                    class="inline-block mt-4 px-4 py-2 bg-white text-black rounded hover:bg-gray-200">SHOP
+                                    BY FASHION</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative bg-white overflow-hidden rounded-lg shadow-md">
+                        <img src="./images/promo/07.png" class="w-full h-48 object-cover" alt="Super Sale">
+                        <div class="absolute top-3 right-3 bg-red-600 text-white py-1 px-2 rounded">-50%</div>
+                        <div class="p-4 text-center">
+                            <h5 class="text-xl font-bold uppercase">Super Sale</h5>
+                            <p class="text-lg font-medium mt-2">Up to 50% off</p>
+                            <p class="mt-2">On All Electronic</p>
+                            <a href="all-product.html"
+                                class="inline-block mt-4 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">HURRY
+                                UP!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end Advertise banners-->
+
+        <!--start categories-->
+        <section class="py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center pb-4">
+                    <div class="border-t border-gray-300 flex-grow mr-2"></div>
+                    <h5 class="text-xl font-bold">Browse Category</h5>
+                    <div class="border-t border-gray-300 flex-grow ml-2"></div>
+                </div>
+
+                <div class="relative">
+                    <div class="flex overflow-x-auto space-x-4 pb-4">
+                        <div class="flex-none w-48 lg:w-64">
+                            <a href="all-product.html?search=Fashion" class="block">
+                                <div
+                                    class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                    <img src="./images/categories/01.png" class="w-full h-48 object-cover"
+                                        alt="Fashion">
+                                    <div class="p-4 text-center border-t">
+                                        <h6 class="text-lg font-bold uppercase">Fashion</h6>
+                                        <p class="text-sm text-gray-500">10 Products</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="flex-none w-48 lg:w-64">
+                            <a href="all-product.html?search=Watches" class="block">
+                                <div
+                                    class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                    <img src="./images/categories/02.png" class="w-full h-48 object-cover"
+                                        alt="Watches">
+                                    <div class="p-4 text-center border-t">
+                                        <h6 class="text-lg font-bold uppercase">Watches</h6>
+                                        <p class="text-sm text-gray-500">8 Products</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="flex-none w-48 lg:w-64">
+                            <a href="all-product.html?search=Shoes" class="block">
+                                <div
+                                    class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                    <img src="./images/categories/03.png" class="w-full h-48 object-cover" alt="Shoes">
+                                    <div class="p-4 text-center border-t">
+                                        <h6 class="text-lg font-bold uppercase">Shoes</h6>
+                                        <p class="text-sm text-gray-500">14 Products</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="flex-none w-48 lg:w-64">
+                            <a href="all-product.html?search=Bags" class="block">
+                                <div
+                                    class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                                    <img src="./images/categories/04.png" class="w-full h-48 object-cover" alt="Bags">
+                                    <div class="p-4 text-center border-t">
+                                        <h6 class="text-lg font-bold uppercase">Bags</h6>
+                                        <p class="text-sm text-gray-500">6 Products</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- Add more items as needed -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end categories-->
+
+        <!--start support info-->
+        <section class="py-5 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 border rounded-lg shadow-md text-center">
+                        <div class="text-4xl text-gray-700 mb-4">
+                            <i class='bx bx-cart-add'></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-gray-800 mb-2">Free Delivery</h5>
+                        <p class="text-gray-600 text-sm mb-2">Free delivery over $199</p>
+                        <p class="text-gray-500 text-sm">We offer a free domestic shipping option via USPS for online
+                            orders over $199. Not all orders will qualify for free shipping..</p>
+                    </div>
+                    <div class="bg-white p-6 border rounded-lg shadow-md text-center">
+                        <div class="text-4xl text-gray-700 mb-4">
+                            <i class='bx bx-credit-card'></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-gray-800 mb-2">Secure Payment</h5>
+                        <p class="text-gray-600 text-sm mb-2">We possess SSL / Secure certificate</p>
+                        <p class="text-gray-500 text-sm">An SSL certificate is a digital certificate that authenticates
+                            a website's identity and...</p>
+                    </div>
+                    <div class="bg-white p-6 border rounded-lg shadow-md text-center">
+                        <div class="text-4xl text-gray-700 mb-4">
+                            <i class='bx bx-dollar-circle'></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-gray-800 mb-2">Free Returns</h5>
+                        <p class="text-gray-600 text-sm mb-2">We return money within 30 days</p>
+                        <p class="text-gray-500 text-sm">You can return any order under $2000 (ex GST) within 30 days of
+                            your purchase. Make sure both the goods...</p>
+                    </div>
+                    <div class="bg-white p-6 border rounded-lg shadow-md text-center">
+                        <div class="text-4xl text-gray-700 mb-4">
+                            <i class='bx bx-support'></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-gray-800 mb-2">Customer Support</h5>
+                        <p class="text-gray-600 text-sm mb-2">Friendly 24/7 customer support</p>
+                        <p class="text-gray-500 text-sm">customers can get help and find answers to questions as soon as they come up—24/7 and in real-time....</p>
+                    </div>
+                </div>
+                <!--end row-->
+            </div>
+        </section>
+        <!--end support info-->
+
+        <!-- Start of News Section -->
+        <section class="py-6">
+            <div class="container mx-auto px-4">
+                <div class="pb-4 text-center">
+                    <h5 class="mb-0 font-bold uppercase text-xl text-gray-800">Latest News</h5>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-white border rounded-lg overflow-hidden shadow-md">
+                        <div class="flex items-center p-4 bg-gray-200">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-gray-800">24</div>
+                                <div class="text-sm text-gray-600">FEB</div>
+                            </div>
+                        </div>
+                        <a href="./blog-details-1.html">
+                            <img src="./images/blog-img/01.jpg" alt="The Future of Web Development"
+                                class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-4">
+                            <a href="./blog-details-1.html">
+                                <h5 class="mb-3 text-lg font-semibold text-gray-800">The Future of Web Development:
+                                    Trends to Watch in 2024</h5>
+                            </a>
+                            <p class="text-gray-600 mb-3 line-clamp-3">Web development is evolving at an unprecedented
+                                pace, with new frameworks, tools, and technologies emerging constantly. In 2024, we can
+                                expect a stronger focus on web performance, accessibility, and more robust frameworks...
+                            </p>
+                        </div>
+                        <div class="p-4 border-t bg-gray-100">
+                            <a href="./blog-details-1.html" class="text-gray-700 hover:text-gray-900">5 Comments</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white border rounded-lg overflow-hidden shadow-md">
+                        <div class="flex items-center p-4 bg-gray-200">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-gray-800">25</div>
+                                <div class="text-sm text-gray-600">FEB</div>
+                            </div>
+                        </div>
+                        <a href="./blog-details-2.html">
+                            <img src="../images/blog-img/2.jpg" alt="How to Build a Successful eCommerce Website"
+                                class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-4">
+                            <a href="./blog-details-2.html">
+                                <h5 class="mb-3 text-lg font-semibold text-gray-800">How to Build a Successful eCommerce
+                                    Website in 2024</h5>
+                            </a>
+                            <p class="text-gray-600 mb-3 line-clamp-3">Building an eCommerce site has never been easier,
+                                but standing out in the crowded digital marketplace requires careful planning. From
+                                choosing the right platform to optimizing the user experience, this blog dives into the
+                                essential steps to ensure your eCommerce site thrives in 2024...</p>
+                        </div>
+                        <div class="p-4 border-t bg-gray-100">
+                            <a href="./blog-details-2.html" class="text-gray-700 hover:text-gray-900">10 Comments</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white border rounded-lg overflow-hidden shadow-md">
+                        <div class="flex items-center p-4 bg-gray-200">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-gray-800">15</div>
+                                <div class="text-sm text-gray-600">JAN</div>
+                            </div>
+                        </div>
+                        <a href="./blog-details-3.html">
+                            <img src="./images/blog-img/3.jpg" alt="Top 10 UX/UI Design Tips for 2024"
+                                class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-4">
+                            <a href="./blog-details-3.html">
+                                <h5 class="mb-3 text-lg font-semibold text-gray-800">Top 10 UX/UI Design Tips for 2024
+                                </h5>
+                            </a>
+                            <p class="text-gray-600 mb-3 line-clamp-3">In today's competitive digital landscape, user
+                                experience (UX) and user interface (UI) design play critical roles in the success of
+                                websites and apps. In this post, we’ll highlight the top 10 UX/UI design tips that will
+                                help you create visually stunning and highly functional digital experiences...</p>
+                        </div>
+                        <div class="p-4 border-t bg-gray-100">
+                            <a href="./blog-details-3.html" class="text-gray-700 hover:text-gray-900">8 Comments</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 4 -->
+                    <div class="bg-white border rounded-lg overflow-hidden shadow-md">
+                        <div class="flex items-center p-4 bg-gray-200">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-gray-800">5</div>
+                                <div class="text-sm text-gray-600">APR</div>
+                            </div>
+                        </div>
+                        <a href="./blog-details-4.html">
+                            <img src="./images/blog-img/4.jpg" alt="AI in Web Design: Revolutionizing UX"
+                                class="w-full h-48 object-cover">
+                        </a>
+                        <div class="p-4">
+                            <a href="./blog-details-4.html">
+                                <h5 class="mb-3 text-lg font-semibold text-gray-800">AI in Web Design: How Artificial
+                                    Intelligence is Revolutionizing UX</h5>
+                            </a>
+                            <p class="text-gray-600 mb-3 line-clamp-3">Artificial Intelligence is making waves in web
+                                design, offering tools that automate and enhance user experiences. From AI-powered
+                                design tools to personalized content generation, this blog explores how AI is
+                                transforming the web design industry...</p>
+                        </div>
+                        <div class="p-4 border-t bg-gray-100">
+                            <a href="./blog-details-4.html" class="text-gray-700 hover:text-gray-900">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of News Section -->
+
+
+
+
+
+
+
+
+        <div id="footer-container"></div>
+
+    </main>
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script src="./js/navbar.js"></script>
+</body>
+
+</html>

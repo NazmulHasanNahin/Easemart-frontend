@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>Checkout Payment</title>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+        <!--start breadcrumb-->
+        <section class="py-3 border-b border-t bg-gray-100 hidden md:flex">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">Checkout Payment</h3>
+                    <nav class="text-sm">
+                        <ol class="breadcrumb flex items-center space-x-2">
+                            <li><a href="index.html" class="text-blue-500 hover:text-blue-700"><i
+                                        class="bx bx-home-alt"></i> Home</a></li>
+                            <li><a href="javascript:;" class="text-gray-600 hover:text-gray-800">Payment</a></li>
+                            <li class="text-gray-500">Checkout Payment</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!--end breadcrumb-->
+
+        <div class="container mx-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Payment Method Section -->
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-bold mb-6">Choose Payment Method</h2>
+                <div class="bg-gray-100 p-4 rounded-md shadow-md">
+                    <div class="flex mb-4">
+                        <button class="w-1/3 p-3 text-center bg-black text-white rounded-md">Credit Card</button>
+                    </div>
+                    <!-- Credit Card Form -->
+                    <div class="bg-white p-6 rounded-md shadow-md">
+                        <div class="mb-4">
+                            <label class="block text-sm font-semibold">Card Owner</label>
+                            <input type="text" placeholder="Card Owner name" class="w-full border p-3 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-semibold">Card Number</label>
+                            <input type="text" placeholder="Valid Owner number" class="w-full border p-3 rounded-md">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold">Expiration Date</label>
+                                <div class="flex space-x-2">
+                                    <input type="text" placeholder="MM" class="w-1/2 border p-3 rounded-md">
+                                    <input type="text" placeholder="YY" class="w-1/2 border p-3 rounded-md">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold">CVV</label>
+                                <input type="text" placeholder="Three digit CCV number"
+                                    class="w-full border p-3 rounded-md">
+                            </div>
+                        </div>
+                        <button class="w-full bg-black text-white py-3 mt-6 rounded-md hover:bg-gray-800"
+                            onclick="handlePurchase()">Confirm Payment</button>
+
+                        
+
+                    </div>
+                </div>
+                <button onclick="autoFillPaymentDetails()"
+                    class="w-1/4 p-3 mt-4 text-center bg-black text-white rounded-md hover:bg-white hover:text-black hover:border-black border-2 border-transparent transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    Auto Fill
+                </button>
+                
+
+
+
+                <div class="mt-6 flex justify-between">
+                    <a href="shop-cart.html"><button class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300">← Back
+                            to Shipping</button></a>
+                </div>
+            </div>
+
+            <!-- Cart Summary Section -->
+            <div class="bg-gray-100 p-6 rounded-md shadow-md">
+                <h3 class="text-xl font-bold mb-4">Order Summary</h3>
+                <div id="cart-summary" class="space-y-4">
+                    <!-- Cart items will be injected here -->
+                </div>
+                <hr class="my-4">
+                <div class="flex justify-between items-center">
+                    <p class="font-semibold text-lg">Total (with 14$ tax)</p>
+                    <p id="total-price" class="font-semibold text-lg">$0.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/checkout-payment.js"></script>
+
+</body>
+
+</html>

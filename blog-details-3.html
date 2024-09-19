@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>Blog Details</title>
+</head>
+
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+
+        <!-- Blog Details Page 3 -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-6">
+                        <img src="./images/blog-img/3.jpg" alt="Top 10 UX/UI Design Tips"
+                            class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-4">Top 10 UX/UI Design Tips for 2024</h1>
+                    <div class="flex space-x-4 text-gray-500 mb-6">
+                        <span><i class="bx bx-user"></i> By Alex Morgan</span>
+                        <span><i class="bx bx-calendar"></i> January 15, 2024</span>
+                        <span><i class="bx bx-comment-detail"></i> 8 Comments</span>
+                    </div>
+                    <p class="text-lg leading-relaxed text-gray-600 mb-6">
+                        In today's competitive digital landscape, user experience (UX) and user interface (UI) design
+                        play critical roles in the success of websites and apps. In this post, we’ll highlight the top
+                        10 UX/UI design tips that will help you create visually stunning and highly functional digital
+                        experiences...
+                    </p>
+                    <blockquote class="border-l-4 border-gray-600 italic pl-4 mb-6 text-gray-700">
+                        "Great design goes beyond aesthetics; it's about functionality and user satisfaction."
+                    </blockquote>
+                    <p class="text-lg leading-relaxed text-gray-600 mb-6">
+                        Discover essential design principles and techniques to enhance user interactions and create
+                        engaging digital experiences. These tips are crucial for staying ahead in the UX/UI design
+                        field.
+                    </p>
+                    <div class="tags flex flex-wrap gap-2 mb-8">
+                        <a href="#"
+                            class="border border-gray-600 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white transition">UX
+                            Design</a>
+                        <a href="#"
+                            class="border border-gray-600 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white transition">UI
+                            Design</a>
+                    </div>
+                    <a href="blog-post.html" class="text-blue-600 hover:underline">Back to Blog</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </section>
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script src="./js/navbar.js"></script>
+</body>
+
+</html>

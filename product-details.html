@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/linkup-site.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <title>Product Details</title>
+</head>
+
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+
+        <!--start breadcrumb-->
+        <section class="pt-3 border-b border-t bg-gray-100 hidden md:flex">
+            <div class="container mx-auto">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">Product Details</h3>
+                    <nav class="text-sm">
+                        <ol class="breadcrumb flex items-center space-x-2">
+                            <li><a href="javascript:;" class="text-blue-500 hover:text-blue-700"><i
+                                        class="bx bx-home-alt"></i> Home</a></li>
+                            <li><a href="javascript:;" class="text-gray-600 hover:text-gray-800">Shop</a></li>
+                            <li class="text-gray-500">Product Details</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!--end breadcrumb-->
+
+        <section class="pb-10 product-details">
+            
+            <!-- <div class="container mx-auto">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="w-full lg:w-1/2">
+                        <div class="border p-3">
+                            <img src="./images/product-gallery/03.png" class="w-full h-96 object-contain"
+                                alt="Product Image">
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2 p-3">
+                        <h3 class="text-2xl font-semibold mb-2">Allen Solly Men's Polo T-Shirt</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-500 text-lg">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star text-gray-300"></i>
+                            </div>
+                            <p class="ml-2 text-gray-600">(24 Ratings)</p>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <h5 class="text-gray-400 line-through">$98.00</h5>
+                            <h4 class="text-2xl font-bold">$49.00</h4>
+                        </div>
+
+                        <div class="mb-6">
+                            <h6 class="text-lg font-semibold">Description:</h6>
+                            <p class="text-gray-700">Virgil Abloh’s Off-White is a streetwear-inspired collection that
+                                continues to break away from the conventions of mainstream fashion. Made in Italy, these
+                                black and brown Odsy-1000 low-top sneakers.</p>
+                        </div>
+                        <div class="mb-6">
+                            <h6 class="text-lg font-semibold">Product id:</h6>
+                            <p class="text-gray-700">#BHU5879</p>
+                        </div>
+
+                        <button
+                            class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-300">
+                            <i class="bx bxs-cart-add"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="mt-10">
+                    <div class="tabs flex space-x-4 border-b border-gray-200">
+                        <button
+                            class="tab-button py-2 px-4 text-lg text-gray-600 hover:text-black border-b-2 border-transparent focus:border-black">DESCRIPTION</button>
+                        <button
+                            class="tab-button py-2 px-4 text-lg text-gray-600 hover:text-black border-b-2 border-transparent focus:border-black">MORE
+                            INFO</button>
+                        <button
+                            class="tab-button py-2 px-4 text-lg text-gray-600 hover:text-black border-b-2 border-transparent focus:border-black">TAGS</button>
+                    </div>
+                    <div class="tab-content mt-6 p-4 lg:p-0">
+                        
+                        <div class="tab-panel block">
+                            <p class="text-gray-700">This is the description of the product. It provides more
+                                information about the item and its features.</p>
+                        </div>
+
+                        
+                        <div class="tab-panel hidden">
+                            <p class="text-gray-700">This section contains additional information about the product,
+                                such as shipping details and returns.</p>
+                        </div>
+
+                        <div class="tab-panel hidden">
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Men's
+                                    Fashion</button>
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Casual</button>
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Electronics</button>
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Furniture</button>
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Sports</button>
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Women
+                                    Wear</button>
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Formal
+                                    Shirts</button>
+                                <button
+                                    class="border px-4 py-2 bg-gray-200 hover:bg-black hover:text-white transition-all duration-300">Shoes</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+        </section>
+
+
+
+    </section>
+
+
+    <!-- Start Back To Top Button -->
+    <a href="javascript:;"
+        class="back-to-top fixed bottom-10 right-5 bg-black text-white p-2 rounded-full shadow-lg hidden">
+        <i class='bx bxs-up-arrow-alt'></i>
+    </a>
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function loadHTMLIntoElement(url, elementId) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading HTML:', error));
+            }
+            loadHTMLIntoElement('navbar.html', 'navbar-container');
+            loadHTMLIntoElement('footer.html', 'footer-container');
+        });
+        window.onscroll = function () {
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        };
+
+        document.querySelector('.back-to-top').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });        
+    </script>
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                tabPanels.forEach(panel => panel.classList.add('hidden'));
+                tabPanels[index].classList.remove('hidden');
+
+                tabButtons.forEach(btn => btn.classList.remove('border-black'));
+                button.classList.add('border-black');
+            });
+        });
+    </script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/product-details.js"></script>
+</body>
+
+</html>
