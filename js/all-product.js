@@ -1,7 +1,7 @@
 // Function to fetch all products
 async function fetchProducts() {
     try {
-        const response = await fetch('http://127.0.0.1:7000/products/products/');
+        const response = await fetch('https://easemart-api.onrender.com/products/products/');
         const products = await response.json();
         displayProducts(products);
     } catch (error) {
@@ -61,7 +61,7 @@ function displayProducts(products) {
                         class="bg-black text-white text-sm px-3 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-300">
                         Add to Cart
                     </button>
-                    <a href="http://127.0.0.1:5501/product-details.html?id=${product.id}" 
+                    <a href="https://easemart.netlify.app/product-details.html?id=${product.id}" 
                        class="bg-gray-200 text-black text-sm px-3 py-1 rounded-lg hover:bg-gray-300 transition-colors duration-300">
                         Details
                     </a>
@@ -114,7 +114,7 @@ function addToCart(productId) {
         return;
     }
 
-    fetch(`http://127.0.0.1:7000/products/cart/add/${productId}/`, {
+    fetch(`https://easemart-api.onrender.com/products/cart/add/${productId}/`, {
         method: 'POST',
         headers: {
             'Authorization': `Token ${token}`,
@@ -141,7 +141,7 @@ function addToCart(productId) {
 
 // Function to fetch products by search or category
 async function fetchFilteredProducts(searchTerm = '', categoryName = '') {
-    let apiUrl = 'http://127.0.0.1:7000/products/products/';
+    let apiUrl = 'https://easemart-api.onrender.com/products/products/';
     
     const queryParams = new URLSearchParams();
     
@@ -204,7 +204,7 @@ document.getElementById('category-filter').addEventListener('change', handleSear
 // Function to fetch all categories
 async function fetchCategories() {
     try {
-        const response = await fetch('http://127.0.0.1:7000/categories/categories/');
+        const response = await fetch('https://easemart-api.onrender.com/categories/categories/');
         const categories = await response.json();
         populateCategoryFilter(categories);
     } catch (error) {

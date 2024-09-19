@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to fetch all products
 async function fetchProducts() {
     try {
-        const response = await fetch('http://127.0.0.1:7000/products/products/');
+        const response = await fetch('https://easemart-api.onrender.com/products/products/');
         const products = await response.json();
 
         // Show 4 random products in the featured section
@@ -64,7 +64,7 @@ function displayProducts(products) {
 
     products.forEach(product => {
         const productHTML = `
-            <a href="http://127.0.0.1:5501/product-details.html?id=${product.id}" class="block">
+            <a href="https://easemart.netlify.app/product-details.html?id=${product.id}" class="block">
                 <div class="card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
                     <div class="relative overflow-hidden">
                         <img src="${product.image || './images/default.png'}" class="w-full h-60 " alt="${product.name}">
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to fetch all products
 async function fetchProducts() {
     try {
-        const response = await fetch('http://127.0.0.1:7000/products/products/');
+        const response = await fetch('https://easemart-api.onrender.com/products/products/');
         const products = await response.json();
 
         // Show 4 random products in the featured section
@@ -135,7 +135,7 @@ function displayProducts(products) {
 
     products.forEach(product => {
         const productHTML = `
-            <a href="http://127.0.0.1:5501/product-details.html?id=${product.id}" class="block">
+            <a href="https://easemart.netlify.app/product-details.html?id=${product.id}" class="block">
                 <div class="card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
                     <div class="relative overflow-hidden">
                         <img src="${product.image || './images/default.png'}" class="w-full h-60 " alt="${product.name}">
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to fetch products and display in both Featured and New Arrivals sections
 async function fetchProductsForSections() {
     try {
-        const response = await fetch('http://127.0.0.1:7000/products/products/');
+        const response = await fetch('https://easemart-api.onrender.com/products/products/');
         const products = await response.json();
 
         // Show 4 random products in the featured section
@@ -200,7 +200,7 @@ function displayProducts(products, sectionClass) {
 
     products.forEach(product => {
         const productHTML = `
-            <a href="http://127.0.0.1:5501/product-details.html?id=${product.id}" class="block">
+            <a href="https://easemart.netlify.app/product-details.html?id=${product.id}" class="block">
                 <div class="card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
                     <div class="relative overflow-hidden">
                         <img src="${product.image || './images/default.png'}" class="w-full h-60 " alt="${product.name}">

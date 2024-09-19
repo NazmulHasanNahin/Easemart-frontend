@@ -8,7 +8,7 @@ async function fetchCartItems() {
     }
 
     try {
-        const response = await fetch('http://127.0.0.1:7000/dashboard/customer/cart/', {
+        const response = await fetch('https://easemart-api.onrender.com/dashboard/customer/cart/', {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,
@@ -118,7 +118,7 @@ async function handlePurchase() {
     }
 
     try {
-        const response = await fetch('http://127.0.0.1:7000/products/purchase/', {
+        const response = await fetch('https://easemart-api.onrender.com/products/purchase/', {
             method: 'POST',
             headers: {
                 'Authorization': `Token ${token}`,

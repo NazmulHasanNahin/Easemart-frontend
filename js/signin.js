@@ -14,7 +14,7 @@ const handleLogin = (event) => {
     errorMessage.classList.add("hidden");
 
     if (username && password) {
-        fetch("http://127.0.0.1:7000/users/login/", {
+        fetch("https://easemart-api.onrender.com/users/login/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password }),

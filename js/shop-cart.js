@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Fetch cart items
-    fetch('http://127.0.0.1:7000/dashboard/customer/cart/', {
+    fetch('https://easemart-api.onrender.com/dashboard/customer/cart/', {
         headers: {
             'Authorization': `Token ${token}`
         }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Remove item from cart
     window.removeFromCart = function (itemId) {
-        fetch(`http://127.0.0.1:7000/products/cart/remove/${itemId}/`, {
+        fetch(`https://easemart-api.onrender.com/products/cart/remove/${itemId}/`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Token ${token}`

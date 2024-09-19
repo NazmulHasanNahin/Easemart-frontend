@@ -9,7 +9,7 @@ function fetchProductDetails() {
     const productId = getProductIdFromUrl();
 
     if (productId) {
-        fetch(`http://127.0.0.1:7000/products/products/${productId}`)
+        fetch(`https://easemart-api.onrender.com/products/products/${productId}`)
             .then(response => response.json())
             .then(product => displayProductDetails(product))
             .catch(error => console.error('Error fetching product details:', error));
@@ -78,7 +78,7 @@ function addToCart(productId) {
         return;
     }
 
-    fetch(`http://127.0.0.1:7000/products/cart/add/${productId}/`, {
+    fetch(`https://easemart-api.onrender.com/products/cart/add/${productId}/`, {
         method: 'POST',
         headers: {
             'Authorization': `Token ${token}`,
