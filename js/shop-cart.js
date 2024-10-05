@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Fetch cart items
-    fetch('https://easemart-api.onrender.com/dashboard/customer/cart/', {
+    fetch('https://ease-mart-api.vercel.app/dashboard/customer/cart/', {
         headers: {
             'Authorization': `Token ${token}`
         }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Remove item from cart
     window.removeFromCart = function (itemId) {
-        fetch(`https://easemart-api.onrender.com/products/cart/remove/${itemId}/`, {
+        fetch(`https://ease-mart-api.vercel.app/products/cart/remove/${itemId}/`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Token ${token}`

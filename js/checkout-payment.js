@@ -8,7 +8,7 @@ async function fetchCartItems() {
     }
 
     try {
-        const response = await fetch('https://easemart-api.onrender.com/dashboard/customer/cart/', {
+        const response = await fetch('https://ease-mart-api.vercel.app/dashboard/customer/cart/', {
             method: 'GET',
             headers: {
                 'Authorization': `Token ${token}`,
@@ -118,7 +118,7 @@ async function handlePurchase() {
     }
 
     try {
-        const response = await fetch('https://easemart-api.onrender.com/products/purchase/', {
+        const response = await fetch('https://ease-mart-api.vercel.app/products/purchase/', {
             method: 'POST',
             headers: {
                 'Authorization': `Token ${token}`,

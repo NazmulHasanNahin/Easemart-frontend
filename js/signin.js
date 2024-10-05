@@ -14,7 +14,7 @@ const handleLogin = (event) => {
     errorMessage.classList.add("hidden");
 
     if (username && password) {
-        fetch("https://easemart-api.onrender.com/users/login/", {
+        fetch("https://ease-mart-api.vercel.app/users/login/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password }),
