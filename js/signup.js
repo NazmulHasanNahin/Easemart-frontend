@@ -67,7 +67,7 @@ const handleSubmit = async (event) => {
 
     try {
         // Send POST request to the registration API
-        const response = await fetch('https://ease-mart-api.vercel.app/users/register/', {
+        const response = await fetch('https://easemart-api.onrender.com/users/register/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Define API endpoints based on account type
-    const profileUrl = accountType === 'seller' ? 'https://ease-mart-api.vercel.app/dashboard/profile/seller/' : 'https://ease-mart-api.vercel.app/dashboard/profile/customer/';
-    const purchasesUrl = 'https://ease-mart-api.vercel.app/dashboard/customer/purchases/';
-    const productsUrl = 'https://ease-mart-api.vercel.app/dashboard/seller/products/';
-    const categoriesUrl = 'https://ease-mart-api.vercel.app/categories/categories/';
-    const addProductUrl = 'https://ease-mart-api.vercel.app/dashboard/seller/products/';
+    const profileUrl = accountType === 'seller' ? 'https://easemart-api.onrender.com/dashboard/profile/seller/' : 'https://easemart-api.onrender.com/dashboard/profile/customer/';
+    const purchasesUrl = 'https://easemart-api.onrender.com/dashboard/customer/purchases/';
+    const productsUrl = 'https://easemart-api.onrender.com/dashboard/seller/products/';
+    const categoriesUrl = 'https://easemart-api.onrender.com/categories/categories/';
+    const addProductUrl = 'https://easemart-api.onrender.com/dashboard/seller/products/';
 
     // Function to create alert container
     const alertContainer = document.createElement('div');
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to delete a product
     function deleteProduct(productId) {
-        fetch(`https://ease-mart-api.vercel.app/dashboard/seller/products/${productId}/`, {
+        fetch(`https://easemart-api.onrender.com/dashboard/seller/products/${productId}/`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Token ${token}`,
