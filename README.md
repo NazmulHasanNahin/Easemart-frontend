@@ -1,6 +1,6 @@
 # Easemart Frontend
 
-![Easemart Logo](https://i.ibb.co.com/M1cx1kY/logo-for-sales-company-and-bag-or-e-commerce.png)
+![Easemart Logo](https://i.ibb.co.com/p36c47J/logo-for-sales-company-and-bag-or-e-commerce-1.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
