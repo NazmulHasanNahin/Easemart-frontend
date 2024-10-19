@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to fetch all products
 async function fetchProducts() {
     try {
-        const response = await fetch('https://easemart-api.onrender.com/products/products/');
+        const response = await fetch('https://ease-mart-api.vercel.app/products/products/');
         const products = await response.json();
 
         // Show 4 random products in the featured section
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to fetch all products
 async function fetchProducts() {
     try {
-        const response = await fetch('https://easemart-api.onrender.com/products/products/');
+        const response = await fetch('https://ease-mart-api.vercel.app/products/products/');
         const products = await response.json();
 
         // Show 4 random products in the featured section
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to fetch products and display in both Featured and New Arrivals sections
 async function fetchProductsForSections() {
     try {
-        const response = await fetch('https://easemart-api.onrender.com/products/products/');
+        const response = await fetch('https://ease-mart-api.vercel.app/products/products/');
         const products = await response.json();
 
         // Show 4 random products in the featured section

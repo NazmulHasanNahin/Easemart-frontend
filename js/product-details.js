@@ -9,7 +9,7 @@ function fetchProductDetails() {
     const productId = getProductIdFromUrl();
 
     if (productId) {
-        fetch(`https://easemart-api.onrender.com/products/products/${productId}`)
+        fetch(`https://ease-mart-api.vercel.app/products/products/${productId}`)
             .then(response => response.json())
             .then(product => displayProductDetails(product))
             .catch(error => console.error('Error fetching product details:', error));
@@ -78,7 +78,7 @@ function addToCart(productId) {
         return;
     }
 
-    fetch(`https://easemart-api.onrender.com/products/cart/add/${productId}/`, {
+    fetch(`https://ease-mart-api.vercel.app/products/cart/add/${productId}/`, {
         method: 'POST',
         headers: {
             'Authorization': `Token ${token}`,

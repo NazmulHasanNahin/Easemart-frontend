@@ -1,7 +1,7 @@
 // Function to fetch all products
 async function fetchProducts() {
     try {
-        const response = await fetch('https://easemart-api.onrender.com/products/products/');
+        const response = await fetch('https://ease-mart-api.vercel.app/products/products/');
         const products = await response.json();
         displayProducts(products);
     } catch (error) {
@@ -114,7 +114,7 @@ function addToCart(productId) {
         return;
     }
 
-    fetch(`https://easemart-api.onrender.com/products/cart/add/${productId}/`, {
+    fetch(`https://ease-mart-api.vercel.app/products/cart/add/${productId}/`, {
         method: 'POST',
         headers: {
             'Authorization': `Token ${token}`,
@@ -141,7 +141,7 @@ function addToCart(productId) {
 
 // Function to fetch products by search or category
 async function fetchFilteredProducts(searchTerm = '', categoryName = '') {
-    let apiUrl = 'https://easemart-api.onrender.com/products/products/';
+    let apiUrl = 'https://ease-mart-api.vercel.app/products/products/';
     
     const queryParams = new URLSearchParams();
     
@@ -204,7 +204,7 @@ document.getElementById('category-filter').addEventListener('change', handleSear
 // Function to fetch all categories
 async function fetchCategories() {
     try {
-        const response = await fetch('https://easemart-api.onrender.com/categories/categories/');
+        const response = await fetch('https://ease-mart-api.vercel.app/categories/categories/');
         const categories = await response.json();
         populateCategoryFilter(categories);
     } catch (error) {

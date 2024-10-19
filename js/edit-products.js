@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');  // Extract the product ID from the URL
-    const apiUrl = `https://easemart-api.onrender.com/products/products/${productId}/`;
+    const apiUrl = `https://ease-mart-api.vercel.app/products/products/${productId}/`;
 
     // Fetch product details
     fetch(apiUrl)
