@@ -67,7 +67,7 @@ function displayProducts(products) {
             <a href="https://easemart.netlify.app/product-details.html?id=${product.id}" class="block">
                 <div class="card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
                     <div class="relative overflow-hidden">
-                        <img src="${product.image || './images/default.png'}" class="w-full h-60 " alt="${product.name}">
+                        <img src="${product.image || './images/default.png'}" class="w-full h-40 object-contain mb-4 rounded-lg" alt="${product.name}">
                     </div>
                     <div class="p-4">
                         <div class="flex items-center justify-between">
@@ -203,7 +203,7 @@ function displayProducts(products, sectionClass) {
             <a href="https://easemart.netlify.app/product-details.html?id=${product.id}" class="block">
                 <div class="card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
                     <div class="relative overflow-hidden">
-                        <img src="${product.image || './images/default.png'}" class="w-full h-60 " alt="${product.name}">
+                        <img src="${product.image || './images/default.png'}" class="w-full h-40 object-contain mb-4 rounded-lg " alt="${product.name}">
                     </div>
                     <div class="p-4">
                         <div class="flex items-center justify-between">
