@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Retrieve account type and token from localStorage
-    const accountType = localStorage.getItem('account_type'); // Expected values: 'customer' or 'seller'
+    const accountType = localStorage.getItem('account_type');
     const token = localStorage.getItem('token');
 
     // Check if user is authenticated
@@ -43,26 +43,52 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     }
 
-    // Function to show or hide tabs based on account type
+    // Function to show or hide tabs based on account type and set Dashboard as the default view
+    function showTab(tabId) {
+        const allTabs = document.querySelectorAll('.tab-content'); 
+        allTabs.forEach(tab => tab.classList.add('hidden')); 
+        document.querySelector(tabId).classList.remove('hidden'); 
+    }
+
+    function setupTabClickListeners() {
+        const tabButtons = document.querySelectorAll('[data-target]');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-target');
+                showTab(tabId); 
+            });
+        });
+    }
+
     function setupTabs() {
         const productsTab = document.querySelector('[data-target="#productsTab"]');
         const addProductTab = document.querySelector('[data-target="#addProductTab"]');
         const ordersTab = document.querySelector('[data-target="#ordersTab"]');
-
-        if (productsTab && addProductTab && ordersTab) {
+        const dashboardTab = document.querySelector('[data-target="#dashboard"]');
+        const addressTab = document.querySelector('[data-target="#addressTab"]');
+        
+        if (dashboardTab && productsTab && addProductTab && ordersTab) {
+            showTab('#dashboard');
+            
             if (accountType === 'seller') {
                 productsTab.style.display = 'block';
-                addProductTab.style.display = 'block'; // Show Add Product tab for seller
+                addProductTab.style.display = 'block';
                 ordersTab.style.display = 'none';
             } else if (accountType === 'customer') {
                 productsTab.style.display = 'none';
-                addProductTab.style.display = 'none'; // Hide Add Product tab for customers
+                addProductTab.style.display = 'none';
                 ordersTab.style.display = 'block';
             }
+
+            setupTabClickListeners(); // Activate tab switching on click
         } else {
             console.error('Tabs elements are not found in the DOM.');
         }
     }
+
+    document.addEventListener('DOMContentLoaded', setupTabs);
+
+
 
     // Fetch and display categories for the seller's product form
     function loadCategories() {
@@ -162,6 +188,56 @@ document.addEventListener('DOMContentLoaded', function () {
                     showAlert('Error adding product', 'error');
                 });
         });
+    }
+
+
+
+    // Function to fetch and display dashboard data
+    function loadDashboard() {
+        fetch(profileUrl, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Token ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(async response => {
+                if (response.status === 401) {
+                    throw new Error('Unauthorized');
+                }
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail || 'Error fetching dashboard data');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fullName = `${data.first_name || ''} ${data.last_name || ''}`;
+            
+                const nameElement = document.getElementById('name_full');
+                const emailElement = document.getElementById('user_email');
+            
+                if (nameElement) {
+                    nameElement.textContent = fullName.trim();
+                } else {
+                    console.warn('Element with ID "name_full" not found in the DOM');
+                }
+                if (emailElement) {
+                    emailElement.textContent = data.email || '';
+                } else {
+                    console.warn('Element with ID "user_email" not found in the DOM');
+                }
+            })
+            
+            .catch(error => {
+                console.error('Error fetching dashboard data:', error);
+                if (error.message === 'Unauthorized') {
+                    showAlert('Session expired. Please log in again.', 'error');
+                    window.location.href = '/signin.html';
+                } else {
+                    showAlert(`Error fetching dashboard data: ${error.message}`, 'error');
+                }
+            });
     }
 
 
@@ -427,6 +503,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initialize the page based on account type
+    loadDashboard();
     setupTabs();
     loadAccountDetails();
 

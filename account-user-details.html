@@ -54,6 +54,11 @@
                             <nav class="space-y-2">
                                 <a href="#"
                                     class="block tab-btn px-4 py-3 text-gray-700 font-medium hover:bg-gray-100 rounded-md transition duration-300"
+                                    data-target="#dashboard">
+                                    <i class="bx bxs-dashboard text-xl align-middle mr-2"></i> Dashboard
+                                </a>
+                                <a href="#"
+                                    class="block tab-btn px-4 py-3 text-gray-700 font-medium hover:bg-gray-100 rounded-md transition duration-300"
                                     data-target="#account-details">
                                     <i class="bx bx-user-circle text-xl align-middle mr-2"></i> Account Details
                                 </a>
@@ -72,6 +77,11 @@
                                     data-target="#addProductTab">
                                     <i class="bx bx-box text-xl align-middle mr-2"></i> Add New Product
                                 </a>
+                                <a href="#" id="address"
+                                    data-target="#addressTab"
+                                    class="block px-4 py-3 text-gray-700 font-medium hover:bg-gray-100 rounded-md transition duration-300">
+                                    <i class="bx bx-home text-xl align-middle mr-2"></i> Address
+                                </a>
                                 <a href="#" id="logoutBtn"
                                     class="block px-4 py-3 text-gray-700 font-medium hover:bg-gray-100 rounded-md transition duration-300">
                                     <i class="bx bx-log-out text-xl align-middle mr-2"></i> Logout
@@ -82,6 +92,50 @@
 
                     <!-- Tab Content -->
                     <div class="w-full lg:w-3/4">
+                        
+                        
+                        <div id="dashboard" class="tab-content border border-gray-300 rounded-lg p-8 shadow-lg bg-gradient-to-br from-white to-gray-100">
+                            <h2 class="text-3xl font-semibold text-blue-700 mb-6">Welcome to Your Dashboard</h2>
+                            <div class="grid grid-cols-1 gap-4 bg-white p-6 rounded-lg shadow-inner">
+                                <p class="text-xl font-semibold text-gray-800">Hello, <span id="name_full" class="text-blue-600"></span>!</p>
+                                <p class="text-md text-gray-700">Your email is: <span id="user_email" class="font-semibold text-gray-900"></span></p>
+                                <p class="text-md text-gray-600 leading-relaxed mt-4">
+                                    From your account dashboard, you can easily:
+                                </p>
+                                <ul class="list-disc list-inside ml-4 text-gray-700">
+                                    <li>Check and view your recent orders</li>
+                                    <li>Manage your shipping and billing addresses</li>
+                                    <li>Update your account details</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+
+                        <!-- Address Tab Content -->
+                        <div id="addressTab" class="tab-content border border-gray-200 shadow-lg rounded-lg p-8 bg-white hidden">
+                            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Your Addresses</h2>
+                            <div class="grid gap-8">
+                                <!-- Billing Address -->
+                                <div class="p-6 rounded-lg bg-gray-50 shadow-sm hover:shadow-md transition-shadow duration-300">
+                                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Billing Address</h3>
+                                    <p class="text-gray-600">
+                                        123 Main Street, Apt 4B,<br>
+                                        New York, NY, 10001
+                                    </p>
+                                </div>
+                                <!-- Shipping Address -->
+                                <div class="p-6 rounded-lg bg-gray-50 shadow-sm hover:shadow-md transition-shadow duration-300">
+                                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Shipping Address</h3>
+                                    <p class="text-gray-600">
+                                        456 Elm Street, Suite 300,<br>
+                                        Los Angeles, CA, 90001
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
                         <!-- Account Details Section -->
                         <div id="account-details" class="tab-content active border border-gray-300 rounded-lg p-6">
                             <h2 class="text-2xl font-semibold mb-4">Account Details</h2>
@@ -163,8 +217,8 @@
                                 </div>
                                 <div class="col-span-2">
                                     <label class="block mb-2 text-sm font-medium text-gray-600">Product ID</label>
-                                    <input id="product_id" type="text" 
-                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500" 
+                                    <input id="product_id" type="text"
+                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
                                         required />
                                 </div>
                                 <div class="col-span-2">

@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Load navbar HTML
     fetch("./navbar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("navbar-container").innerHTML = data;
-            initNavbar(); // Initialize navbar functionality (mobile menu, etc.)
+            initNavbar(); 
             initializeSearchFunctionality(); // Initialize search functionality
         })
         .catch(error => console.error('Error loading navbar:', error));
@@ -52,9 +51,8 @@ function initializeSearchFunctionality() {
 
     // Function to handle search redirect
     function handleSearch(searchInputElement) {
-        const searchQuery = searchInputElement.value.trim(); // Get the search query
+        const searchQuery = searchInputElement.value.trim(); 
         if (searchQuery) {
-            // Redirect to the 'all-product.html' page with the search query as a parameter
             window.location.href = `all-product.html?search=${encodeURIComponent(searchQuery)}`;
         }
     }
