@@ -1,9 +1,32 @@
+const token = localStorage.getItem('token');
+
+// Function to show alert messages
+function showAlert(message, type = 'error') {
+    const alertContainer = document.getElementById('alert-container');
+
+    const alertDiv = document.createElement('div');
+    alertDiv.classList.add('p-4', 'rounded', 'shadow-lg', 'max-w-sm', 'mb-4', 'text-white', 'transition', 'duration-500', 'ease-in-out');
+
+    if (type === 'error') {
+        alertDiv.classList.add('bg-red-500');
+    } else if (type === 'success') {
+        alertDiv.classList.add('bg-green-500');
+    }
+
+    alertDiv.textContent = message;
+    alertContainer.appendChild(alertDiv);
+
+    setTimeout(() => {
+        alertDiv.classList.add('opacity-0');
+        setTimeout(() => alertDiv.remove(), 500);
+    }, 3000);
+}
+
 // Function to fetch and display cart items
 async function fetchCartItems() {
-    const token = localStorage.getItem('token');
     if (!token) {
         showAlert('You need to log in first', 'error');
-        window.location.href = 'signin.html';  // Redirect to login if no token
+        window.location.href = 'signin.html';
         return;
     }
 
@@ -31,13 +54,20 @@ async function fetchCartItems() {
         showAlert(error.message || 'Error fetching cart items', 'error');
     }
 }
-
+function copyTestCardNumber() {
+    const testCardNumber = document.getElementById('test-card-number').textContent;
+    navigator.clipboard.writeText(testCardNumber).then(() => {
+        showAlert("Test card number copied to clipboard!", 'success');
+    }).catch(err => {
+        console.error("Failed to copy text: ", err);
+    });
+}
 // Function to display cart items
 function displayCartItems(cartItems) {
     const cartSummary = document.getElementById('cart-summary');
     if (!cartSummary) return;
 
-    cartSummary.innerHTML = ''; // Clear existing items
+    cartSummary.innerHTML = '';
 
     let total = 0;
 
@@ -52,68 +82,24 @@ function displayCartItems(cartItems) {
                     <img src="${product.image || 'default-image.png'}" alt="${product.name || 'Product Image'}" class="w-16 h-16 object-cover rounded-md mr-4">
                     <div>
                         <p class="font-semibold">${product.name || 'Product Name'}</p>
-                        <p class="text-sm text-gray-500">Quantity: ${quantity}</p>
+                        <p class="text-gray-500">Quantity: ${quantity}</p>
                     </div>
                 </div>
-                <p class="font-semibold">$${(productTotal).toFixed(2)}</p>
+                <p class="text-lg font-semibold">$${productTotal.toFixed(2)}</p>
             </div>
         `;
     });
 
-    document.getElementById('total-price').textContent = `$${(total + 14).toFixed(2)}`;
+    const tax = 14;  
+    total += tax;
+
+    document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
 }
 
-// Function to auto-fill payment details
-function autoFillPaymentDetails() {
-    const cardOwner = document.querySelector('input[placeholder="Card Owner name"]');
-    const cardNumber = document.querySelector('input[placeholder="Valid Owner number"]');
-    const expMonth = document.querySelector('input[placeholder="MM"]');
-    const expYear = document.querySelector('input[placeholder="YY"]');
-    const cvv = document.querySelector('input[placeholder="Three digit CCV number"]');
-
-    cardOwner.value = 'John Doe';
-    cardNumber.value = '4204 5536 6778 3348';
-    expMonth.value = '12';
-    expYear.value = '26';
-    cvv.value = '771';
-}
-
-// Function to validate payment details
-function validatePaymentDetails() {
-    const cardOwner = document.querySelector('input[placeholder="Card Owner name"]');
-    const cardNumber = document.querySelector('input[placeholder="Valid Owner number"]');
-    const expMonth = document.querySelector('input[placeholder="MM"]');
-    const expYear = document.querySelector('input[placeholder="YY"]');
-    const cvv = document.querySelector('input[placeholder="Three digit CCV number"]');
-
-    // Check if all fields are filled
-    return cardOwner.value && cardNumber.value && expMonth.value && expYear.value && cvv.value;
-}
-
-// Function to enable or disable the payment button
-function togglePaymentButton() {
-    const paymentButton = document.getElementById('payment-button');
-    if (paymentButton) {
-        paymentButton.disabled = !validatePaymentDetails();
-    }
-}
-
-// Event listeners to validate payment details on input change
-document.querySelectorAll('input[placeholder]').forEach(input => {
-    input.addEventListener('input', togglePaymentButton);
-});
-
-// Function to handle the purchase process
-async function handlePurchase() {
-    const token = localStorage.getItem('token');
+document.getElementById('checkout-button').addEventListener('click', async () => {
     if (!token) {
-        showAlert('You need to log in first', 'error');
-        window.location.href = 'signin.html';  // Redirect to login if no token
-        return;
-    }
-
-    if (!validatePaymentDetails()) {
-        showAlert('Please fill in all payment details', 'error');
+        alert('You need to be logged in to proceed with the checkout.');
+        window.location.href = '/signin.html';  
         return;
     }
 
@@ -124,39 +110,21 @@ async function handlePurchase() {
                 'Authorization': `Token ${token}`,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({})
         });
 
-        if (!response.ok) {
-            throw new Error('Purchase failed');
+        if (response.ok) {
+            const data = await response.json();
+            // Redirect to Stripe Checkout
+            window.location.href = data.checkout_url;
+        } else {
+            const data = await response.json();
+            console.error('Error creating checkout session:', data.error);
+            alert(data.error || 'An error occurred while processing your request.');
         }
-
-        const result = await response.json();
-        showAlert('Purchase successful', 'success');
-        
-        // Redirect to checkout-complete.html after successful purchase
-        window.location.href = 'checkout-complete.html';
-
     } catch (error) {
-        console.error('Error during purchase:', error);
-        showAlert(error.message || 'Error during purchase', 'error');
+        console.error('Network or server error:', error);
+        alert('A network error occurred. Please try again.');
     }
-}
-
-// Function to show alert messages
-function showAlert(message, type) {
-    const alertContainer = document.createElement('div');
-    alertContainer.className = `alert ${type === 'error' ? 'bg-red-500' : 'bg-green-500'} text-white p-4 rounded-md fixed bottom-4 right-4 shadow-lg`;
-    alertContainer.textContent = message;
-    document.body.appendChild(alertContainer);
-
-    setTimeout(() => {
-        alertContainer.remove();
-    }, 5000);
-}
-
-// Initialize page
-document.addEventListener('DOMContentLoaded', () => {
-    fetchCartItems();
-    togglePaymentButton(); // Initialize button state
 });
+
+document.addEventListener('DOMContentLoaded', fetchCartItems);
