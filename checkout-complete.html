@@ -71,7 +71,7 @@
 
             async function fetchOrderDetails(sessionId) {
                 const token = localStorage.getItem('token'); 
-                const response = await fetch(`http://127.0.0.1:7000/products/purchase/?session_id=${sessionId}`, {
+                const response = await fetch(`https://ease-mart-api.vercel.app/products/purchase/?session_id=${sessionId}`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Token ${token}`,
