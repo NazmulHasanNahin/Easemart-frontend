@@ -18,12 +18,10 @@
     <title>Order Complete</title>
 </head>
 
-
 <body>
     <div id="navbar-container"></div>
 
     <section>
-
         <!--start breadcrumb-->
         <section class="py-3 border-b border-t bg-gray-100 hidden md:flex">
             <div class="container mx-auto">
@@ -42,26 +40,22 @@
         </section>
         <!--end breadcrumb-->
 
-
         <!--start shop cart-->
         <section class="py-4">
             <div class="container mx-auto">
                 <div class="bg-white shadow-md rounded-md py-6 mt-6">
                     <div class="text-center">
                         <h2 class="text-2xl font-bold pb-3">Thank you for your order!</h2>
-                        <p class="text-sm mb-2">Your order has been placed and will be processed as soon as possible.
-                        </p>
+                        <p class="text-sm mb-2">Your order has been placed and will be processed as soon as possible.</p>
                         <p class="text-sm mb-2">
                             Make sure you make note of your order number, which is
-                            <span class="font-medium" id="order-number"></span>.
+                            <span class="font-medium" id="order-number">Loading...</span>.
                         </p>
-                        <p class="text-sm">You will be receiving an email shortly with confirmation of your order.
-                        </p>
+                        <p class="text-sm">You will be receiving an email shortly with confirmation of your order.</p>
                         <div class="mt-4">
                             <a href="index.html"
                                 class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md mr-3 hover:bg-gray-300">Go back
                                 shopping</a>
-
                         </div>
                     </div>
                 </div>
@@ -69,22 +63,37 @@
         </section>
         <!--end shop cart-->
 
-
-
         <script>
-            function generateOrderNumber(length) {
-                let result = '';
-                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                const charactersLength = characters.length;
-                for (let i = 0; i < length; i++) {
-                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-                }
-                return result;
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
             }
-            document.getElementById('order-number').innerText = generateOrderNumber(10);
+
+            async function fetchOrderDetails(sessionId) {
+                const token = localStorage.getItem('token'); 
+                const response = await fetch(`http://127.0.0.1:7000/products/purchase/?session_id=${sessionId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Token ${token}`,
+                    },
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('order-number').innerText = data.purchases.length > 0 ? data.purchases[0].id : "Unknown";
+                } else {
+                    console.error('Error fetching order details:', response.statusText);
+                    document.getElementById('order-number').innerText = "Error fetching order number.";
+                }
+            }
+
+            const sessionId = getQueryParam('session_id');
+            if (sessionId) {
+                fetchOrderDetails(sessionId);
+            } else {
+                document.getElementById('order-number').innerText = "No session ID provided.";
+            }
         </script>
-
-
     </section>
 
     <!-- Start Back To Top Button -->
@@ -121,7 +130,7 @@
                 top: 0,
                 behavior: 'smooth'
             });
-        });        
+        });
     </script>
     <script src="./js/navbar.js"></script>
 </body>
